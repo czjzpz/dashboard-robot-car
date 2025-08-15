@@ -124,7 +124,7 @@ export function ControlPanel({
             onClick={() => setShowSettings(true)}
             className="text-xs font-mono px-2 py-1 border bg-gray-800 border-gray-600 text-gray-300"
           >
-            SET
+            SETTINGS
           </button>
         </div>
 
@@ -164,6 +164,14 @@ export function ControlPanel({
               STANDBY MODE
               <br />
               SELECT UI MODE
+
+              <div className="text-xs mt-2 text-center w-1/4 h-full align-middle mx-auto">
+                <p>CONTROLS:</p>
+                <p>W: FORWARD</p>
+                <p>S: BACK</p>
+                <p>A: TURN LEFT</p>
+                <p>D: TURN RIGHT</p>
+              </div>
             </div>
           )}
 
@@ -187,9 +195,11 @@ export function ControlPanel({
                     ? "bg-green-700 border-green-600 text-white"
                     : "bg-gray-800 border-gray-600 text-gray-300"
                 }`}
+                disabled
               >
-                AUTO
+                AUTO (WIP)
               </button>
+
 
               {uiMode === "advanced" && (
                 <>
@@ -224,7 +234,7 @@ export function ControlPanel({
                   </div>
 
                   <div className="border-t border-gray-700 pt-2 mt-2">
-                    <div className="text-xs text-gray-500 mb-1">SERVO</div>
+                    <div className="text-xs text-gray-500 mb-1">SERVO (nonfunctional currently)</div>
                     <div className="grid grid-cols-3 gap-1">
                       <button
                         onClick={() => handleServo(45)}
@@ -248,7 +258,7 @@ export function ControlPanel({
                   </div>
 
                   <div className="border-t border-gray-700 pt-2 mt-2">
-                    <div className="text-xs text-gray-500 mb-1">LED</div>
+                    <div className="text-xs text-gray-500 mb-1">LED (nonfunctional currently)</div>
                     <div className="grid grid-cols-3 gap-1">
                       <button
                         onClick={() => handleLights(255, 0, 0)}
@@ -273,6 +283,16 @@ export function ControlPanel({
                 </>
               )}
             </>
+          )}
+
+          {(uiMode === "default") && (
+            <div className="text-xs text-gray-500 font-mono mt-2 text-center w-1/4 h-full align-middle mx-auto">
+                <p>CONTROLS:</p>
+                <p>W: FORWARD</p>
+                <p>S: BACK</p>
+                <p>A: TURN LEFT</p>
+                <p>D: TURN RIGHT</p>
+            </div>
           )}
         </div>
       </div>

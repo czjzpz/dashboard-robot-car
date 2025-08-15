@@ -87,10 +87,10 @@ export function CameraFeed({ activeKeys, isConnected, cameraUrl }: CameraFeedPro
           <div className="absolute inset-0 bg-black/90 backdrop-blur-md flex items-center justify-center">
             <div className="text-center">
               <div className="text-red-400 font-mono text-lg mb-2">
-                {!isConnected ? "API DISCONNECTED" : "CAMERA OFFLINE"}
+                {!isConnected ? "FASTAPI AND CAMERA DISCONNECTED" : "CAMERA OFFLINE"}
               </div>
               <div className="text-gray-500 font-mono text-xs">
-                {!isConnected ? "Robot API connection lost" : "Camera stream unavailable"}
+                {!isConnected ? "Both the FastAPI endpoints and camera stream cannot be found." : "Camera stream unavailable"}
               </div>
             </div>
           </div>

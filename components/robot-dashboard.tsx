@@ -112,11 +112,6 @@ export function RobotDashboard() {
 
   return (
     <div className="h-screen bg-black text-white p-2 grid grid-cols-4 gap-2 relative">
-      {!isConnected && (
-        <div className="absolute inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center">
-          <div className="text-red-400 font-mono text-xl">ROBOT API DISCONNECTED</div>
-        </div>
-      )}
 
       {/* Camera Feed - Centered, takes most space */}
       <div className="col-span-3 bg-gray-900 border border-gray-700">

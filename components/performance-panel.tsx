@@ -74,67 +74,6 @@ export function PerformancePanel({ isConnected, lastMessage, robotMode }: Perfor
           <span className="text-green-400">{getModeText(robotMode)}</span>
         </div>
 
-        <div className="flex justify-between">
-          <span className="text-gray-400">spd</span>
-          <span className="text-green-400">{metrics.speed.toFixed(1)}km/h</span>
-        </div>
-
-        <div className="flex justify-between">
-          <span className="text-gray-400">cpu</span>
-          <span className="text-green-400">{metrics.cpu.toFixed(0)}%</span>
-        </div>
-
-        <div className="flex justify-between">
-          <span className="text-gray-400">gpu</span>
-          <span className="text-green-400">{metrics.gpu.toFixed(0)}%</span>
-        </div>
-
-        <div className="flex justify-between">
-          <span className="text-gray-400">bat</span>
-          <span className={metrics.bat > 20 ? "text-green-400" : "text-red-400"}>{metrics.bat.toFixed(0)}%</span>
-        </div>
-
-        <div className="flex justify-between">
-          <span className="text-gray-400">tmp</span>
-          <span className="text-green-400">{metrics.temp.toFixed(0)}°C</span>
-        </div>
-
-        <div className="border-t border-gray-700 pt-1 mt-2">
-          <div className="text-xs text-gray-500 mb-1">GYRO</div>
-          <div className="flex justify-between">
-            <span className="text-gray-400">x</span>
-            <span className="text-green-400">{metrics.gyroX.toFixed(1)}°</span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-gray-400">y</span>
-            <span className="text-green-400">{metrics.gyroY.toFixed(1)}°</span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-gray-400">z</span>
-            <span className="text-green-400">{metrics.gyroZ.toFixed(1)}°</span>
-          </div>
-        </div>
-
-        <div className="border-t border-gray-700 pt-1 mt-2">
-          <div className="text-xs text-gray-500 mb-1">WHEEL</div>
-          <div className="flex justify-between">
-            <span className="text-gray-400">fl</span>
-            <span className="text-green-400">{metrics.wheelFL.toFixed(1)}</span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-gray-400">fr</span>
-            <span className="text-green-400">{metrics.wheelFR.toFixed(1)}</span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-gray-400">bl</span>
-            <span className="text-green-400">{metrics.wheelBL.toFixed(1)}</span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-gray-400">br</span>
-            <span className="text-green-400">{metrics.wheelBR.toFixed(1)}</span>
-          </div>
-        </div>
-
         {lastMessage && (
           <div className="border-t border-gray-700 pt-1 mt-2">
             <div className="text-xs text-gray-500 mb-1">MSG</div>
