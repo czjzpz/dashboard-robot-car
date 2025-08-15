@@ -16,9 +16,7 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "YOLO Vision Control Center",
-  description: "Robot Car Dashboard with Live Object Detection",
-  generator: "v0.app",
+  title: "Robot Car Dashboard",
 }
 
 export default function RootLayout({
