@@ -286,7 +286,7 @@ export function ControlPanel({
           )}
 
           {(uiMode === "default") && (
-            <div className="text-xs text-gray-500 font-mono mt-2 text-center w-1/4 h-full align-middle mx-auto">
+            <div className="text-xs  mt-2 text-center w-1/4 h-full align-middle mx-auto">
                 <p>CONTROLS:</p>
                 <p>W: FORWARD</p>
                 <p>S: BACK</p>

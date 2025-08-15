@@ -61,8 +61,8 @@ export function CameraFeed({ activeKeys, isConnected, cameraUrl }: CameraFeedPro
   useEffect(() => {
     const interval = setInterval(() => {
       if (isConnected && cameraConnected) {
-        setObjects(Math.floor(Math.random() * 5) + 6)
-        setFps(actualFps || 28 + Math.floor(Math.random() * 5))
+        setObjects(0)
+        setFps(actualFps)
       } else {
         setObjects(0)
         setFps(0)

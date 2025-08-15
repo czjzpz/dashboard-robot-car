@@ -1,7 +1,5 @@
 "use client"
 
-import { useState, useEffect } from "react"
-
 interface PerformancePanelProps {
   isConnected: boolean
   lastMessage: string
@@ -9,43 +7,6 @@ interface PerformancePanelProps {
 }
 
 export function PerformancePanel({ isConnected, lastMessage, robotMode }: PerformancePanelProps) {
-  const [metrics, setMetrics] = useState({
-    speed: 12,
-    cpu: 45,
-    gpu: 78,
-    bat: 87,
-    temp: 42,
-    gyroX: 0,
-    gyroY: 0,
-    gyroZ: 0,
-    wheelFL: 0,
-    wheelFR: 0,
-    wheelBL: 0,
-    wheelBR: 0,
-  })
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (isConnected) {
-        setMetrics((prev) => ({
-          speed: Math.max(0, prev.speed + (Math.random() - 0.5) * 2),
-          cpu: Math.max(0, Math.min(100, prev.cpu + (Math.random() - 0.5) * 10)),
-          gpu: Math.max(0, Math.min(100, prev.gpu + (Math.random() - 0.5) * 8)),
-          bat: Math.max(0, Math.min(100, prev.bat - 0.1)),
-          temp: Math.max(35, Math.min(65, prev.temp + (Math.random() - 0.5) * 2)),
-          gyroX: Math.max(-180, Math.min(180, prev.gyroX + (Math.random() - 0.5) * 5)),
-          gyroY: Math.max(-90, Math.min(90, prev.gyroY + (Math.random() - 0.5) * 3)),
-          gyroZ: Math.max(-180, Math.min(180, prev.gyroZ + (Math.random() - 0.5) * 4)),
-          wheelFL: Math.max(-10, Math.min(10, prev.wheelFL + (Math.random() - 0.5) * 2)),
-          wheelFR: Math.max(-10, Math.min(10, prev.wheelFR + (Math.random() - 0.5) * 2)),
-          wheelBL: Math.max(-10, Math.min(10, prev.wheelBL + (Math.random() - 0.5) * 2)),
-          wheelBR: Math.max(-10, Math.min(10, prev.wheelBR + (Math.random() - 0.5) * 2)),
-        }))
-      }
-    }, 1000)
-    return () => clearInterval(interval)
-  }, [isConnected])
-
   const getModeText = (mode: number) => {
     switch (mode) {
       case 1:
